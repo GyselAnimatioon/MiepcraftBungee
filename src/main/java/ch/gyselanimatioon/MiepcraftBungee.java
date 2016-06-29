@@ -10,7 +10,7 @@ public class MiepcraftBungee extends Plugin {
 	
 	public void onEnable() {
 
-		Database db = new Database("jdbc:mysql://server.mineunity.eu/Mineunity88", "Mineunity88", "f0e6be4ce7");
+		Database db = new Database("jdbc:mysql://server.mineunity.eu/Mineunity88", "Mineunity88", "pw");
 
 		connection = db.getConnection();
 		
