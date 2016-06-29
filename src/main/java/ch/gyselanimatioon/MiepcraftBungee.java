@@ -1,12 +1,20 @@
 package ch.gyselanimatioon;
 
+import java.sql.Connection;
+
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class MiepcraftBungee extends Plugin {
-	@Override
+	
+	public static Connection connection;
+	
 	public void onEnable() {
-		// You should not put an enable message in your plugin.
-		// BungeeCord already does so
-		getLogger().info("Yay! It loads!");
+
+		Database db = new Database("jdbc:mysql://server.mineunity.eu/Mineunity88", "Mineunity88", "f0e6be4ce7");
+
+		connection = db.getConnection();
+		
+		
+		getProxy().getPluginManager().registerCommand(this, new ReportCommand());
 	}
 }
